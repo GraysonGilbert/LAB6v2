@@ -11,11 +11,11 @@ from random import randint
 class LED8x8(multiprocessing.Process):
 
   #for smiley face portion of the lab
-	pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100] 
+	#pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100] 
 
-	multiPattern = multiprocessing.Array('i',8)  #declares a multiprocessing array
-	for x in range(8):
-		multiPattern[x] = pattern[x]
+	#multiPattern = multiprocessing.Array('i',8)  #declares a multiprocessing array
+	#for x in range(8):
+	#	multiPattern[x] = pattern[x]
 
 	def __init__(self, data, latch, clock):
 		self.shifter = Shifter(data, latch, clock)
