@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import multiprocessing
 from ledarray import LEDarray
 
-display = LEDarray(data=16, latch=12, clock=6)  #initializes the display
+display = LEDarray(data=23, latch=24, clock=25)  #initializes the display
 
 try:
 	smileProcess = multiprocessing.Process(target=display.randomWalk)  #starts the randomWalk process
