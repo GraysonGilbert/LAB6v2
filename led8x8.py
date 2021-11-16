@@ -10,7 +10,9 @@ from random import randint
 
 class LED8x8(multiprocessing.Process):
 
-	pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100]  #for smiley face portion of the lab
+  #for smiley face portion of the lab
+	#pattern = [0b00111100, 0b01000010, 0b10100101, 0b10000001,0b10100101, 0b10011001, 0b01000010, 0b00111100] 
+
 	multiPattern = multiprocessing.Array('i',8)  #declares a multiprocessing array
 	for x in range(8):
 		multiPattern[x] = pattern[x]
@@ -20,9 +22,9 @@ class LED8x8(multiprocessing.Process):
     
     
 	def randomWalk(self):
-		x = 4  #chose to make starting position (4,4)
-		y = 4
-		while True:  #keeps the random movement going
+		x = 1  #starting position (1,1)
+		y = 1
+		while True:  #loop for continuous random movements
 			while True:  #loop until acceptable move is chosen
 				oldX = x
 				oldY = y
@@ -36,7 +38,7 @@ class LED8x8(multiprocessing.Process):
 			self.shifter.shiftByte(( 1 << x))  #selects one LED to be lit up at the desired location
 			self.shifter.shiftByte(~(1 << y))
 			self.shifter.ping(self.shifter.latchPin)
-			time.sleep(.1)  #delay of .1 seconds as requested
+			time.sleep(.1)  #delay of .1 sec
       
 #____________Smiley Face portion of Code_______________
 #  def display(self,num):

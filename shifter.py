@@ -1,4 +1,3 @@
-# This code is exactly what was given, no modifications
 import RPi.GPIO as GPIO
 import time
 
