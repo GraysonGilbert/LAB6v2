@@ -1,6 +1,3 @@
-# Lab 3
-# Created by Parker Bagshaw for ENME441
-# 11/9/20
 import time
 import RPi.GPIO as GPIO
 import multiprocessing
