@@ -36,7 +36,7 @@ class LEDarray(multiprocessing.Process):
 				else:  #if the move is not acceptable, it will reset values and randomly change again
 					x = oldX
 					y = oldY
-			self.shifter.shiftByte(~( 1 << x))  #selects one LED to be lit up at the desired location
-			self.shifter.shiftByte((1 << y))
+			self.shifter.shiftByte(( 1 << x))  #selects one LED to be lit up at the desired location
+			self.shifter.shiftByte(~(1 << y))
 			self.shifter.ping(self.shifter.latchPin)
 			time.sleep(.1)  #delay of .1 seconds as requested
