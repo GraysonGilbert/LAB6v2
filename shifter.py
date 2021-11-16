@@ -19,7 +19,8 @@ class Shifter:
 
   def shiftByte(self, byteVal):
     for i in range(8):          # 8 bits in pattern
-      GPIO.output(self.dataPin, byteVal & (1<<i))
+      #GPIO.output(self.dataPin, byteVal & (1<<i)) 
+      GPIO.output(self.dataPin, ~(byteVal & (1<<i)))  # if common anode
       self.ping(self.clockPin)
 
   def latch(self):
